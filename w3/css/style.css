@@ -1,0 +1,49 @@
+h1{
+    color:olivedrab;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+}
+#Container{
+    width: 1000px;
+    height: 800px;
+    border: 2px solid red;
+    background-color: whitesmoke
+}
+body,html{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+#Nav{
+    text-align: center;
+    border: 1px solid gray;
+}
+.nav-list{
+    list-style: none;
+    display: inline;
+    text-align: center;
+    padding: 14px;
+}
+#Header{
+    border: 2px solid rebeccapurple;
+    text-align: center;
+}
+#Content{
+    border: 1px solid greenyellow;
+    height: 610px; 
+}
+#Footer{
+    border: 1px solid orangered;
+    text-align: center;
+}
+.section-text{
+    width: 650px;
+    float: left;
+    padding-left: 20px;
+}
+img{
+    float: left;
+}
+#section-header{
+    padding-left: 20px;
+}
