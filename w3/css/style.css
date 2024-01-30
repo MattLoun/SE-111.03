@@ -1,13 +1,13 @@
 h1{
     color:olivedrab;
     text-decoration: underline;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Honk", system-ui;
 }
 #Container{
     width: 1000px;
     height: 800px;
     border: 2px solid red;
-    background-color: whitesmoke
+    background-color:white;
 }
 body,html{
     display: flex;
@@ -33,7 +33,7 @@ body,html{
     height: 610px; 
 }
 #Footer{
-    border: 1px solid orangered;
+    border: 1px solid black;
     text-align: center;
 }
 .section-text{
@@ -46,4 +46,16 @@ img{
 }
 #section-header{
     padding-left: 20px;
+}
+
+.gallery{
+     margin-left: 10px;
+     margin-right: 10px;
+     margin-bottom: 10px;
+     border: 1px solid black
+}
+
+#contact-form{
+    width: 500px;
+    margin: auto;
 }
