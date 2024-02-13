@@ -95,3 +95,17 @@ a:active{
     color:red;
 
 }
+
+table{
+    border: 1px solid black;
+    margin-left: 150px;
+    width: 700px;
+    border-collapse: collapse;
+}
+td{
+    border: 1px solid rgb(225, 202, 202);
+}
+
+tr:nth-child(even){
+    background-color: #ceb7b7;
+}
