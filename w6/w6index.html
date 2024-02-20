@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE-edge">
+<meta name="viewport" content="width=device-width, inital-scale=1.0">
+<title>Week 6 | Javascript Lab</title>
+</head>
+
+</html>
+
+<body>
+    <h1>Week 6 | Javascript Lab</h1>
+    <p></p>
+    <button>Call function</button>
+    <script>
+        //Your Javascript goes here
+        var firstName = "Matt";
+        var LastName = "Loun";
+        var message = `Hello ${firstName} ${LastName}`;
+        var para = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facere, cupiditate asperiores perferendis accusamus aspernatur libero eaque ex ratione non animi sit, at necessitatibus esse harum doloremque nostrum laudantium recusandae!";
+        //example of alert function
+        //alert({firstName} + " " + {LastName})
+        console.log(`${firstName} ${LastName}!`);
+        //This should output message to the page
+
+        function outpuToPage(tag, msg, color) {
+            document.querySelector(tag).innerHTML = msg;
+            document.querySelector(tag).style.color = color;
+        }
+
+        outpuToPage("h1", message, "blue");
+        outpuToPage("p", LastName, "green");
+
+        //Example of event handler
+        var dataPromptButton = document.querySelector("button");
+        dataPromptButton.addEventListener('click', dataPrompt);
+
+        function dataPrompt() {
+            alert(`My name is ${firstName} welcome to my program`);
+            var yourName = prompt("Please tell me your name.");
+            alert(`Hello ${yourname}! Nice to meet you.`);
+            var yourLastName = prompt(`please enter your last name.`); 
+            alert(`your full name is ${yourName} ${yourLastName}`); 
+
+            var firstNumber = prompt("Please enter a number.");
+            var secondNumber = prompt("Please enter another name.");
+
+            var result = Number(firstNumber) * Number(secondNumber);
+
+            alert(`Here is your result: ${result}`);
+
+            var documentBody = document.querySelector("body");
+            var outputData = document.createElement("p")
+
+            outputData.innerHTML = `Your name is ${yourName} ${yourLastName}<br> The result of your numbers is ${result}<br> Thank you from ${firstName} ${LastName}`
+
+            documentBody.appendChild(outputData);
+
+        }
+    </script>
+</body>
