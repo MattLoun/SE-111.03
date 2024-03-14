@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Pay Calculator</title>
+</head>
+<body>
+    <h1>Javascript Pay Calculator</h1>
+    <p></p>
+    <button>Call function</button>
+    <script>
+        var GrossPay = "$1000.00";
+        var Share = "$200.00";
+        var NetPay = "$800.00";
+
+        function outputToPage(tag, msg, color){
+            document.querySelector(tag).innerHTML = msg;
+            document.querySelector(tag).style.color = color;
+        }
+
+        outputToPage("h1", message, "blue");
+        outputToPage("p", para, "green");
+
+        var dataPromptButton = document.querySelector("button");
+        dataPromptButton.addEventListener('click', dataPrompt);
+
+        function dataPrompt(){
+            alert(`welcome to the Javascript pay calculator.`);
+            var GrossPay = prompt("Enter your grossPay.");
+            alert(`Uncle Sam's Share: ${Share}! $200.00.`);
+            var yourShare = prompt(`enter your share.`);
+            alert(`NetPay: ${NetPay}! $800.00`);
+            var NetPay = prompt(`enter your NetPay.`);
+
+            alert(`Here is your result: ${result}`);
+
+            var documentBody = document.querySelector("body");
+            var outputData = document.createElement("p");
+
+            outputData.innerHTML = `Gross Pay: ${GrossPay} ${Share}<br> The result of your numbers is ${result}<br>Thank you`;
+
+            documentBody.appendChild(outputData);
+        }
+    </script>
+</body>
+</html>
