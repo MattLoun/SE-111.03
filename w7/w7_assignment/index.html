@@ -68,7 +68,7 @@
 
     <script>
         //edit the below statement to select the #enter-button id from the HTML file
-        document.querySelector().addEventListener("click", alertName)
+        document.querySelector("#enter-button").addEventListener("click", alertName)
         
         
 
@@ -77,12 +77,22 @@
             //get each *value* from the form elements (first name, last name, hours worked, hourly rate) and store them into vars
 
             /*USE THE FOLLOWING VARIABLE NAMES:
-            fname --> firstname, #first
-            lname --> lastname, #last
-            hours --> hoursworked, #hours
-            rate --> hourlyrate, #rate */
+           
             
+           
+           */
 
+            // firstname, #first
+            var firstname = document.querySelector("#first").value;
+            // lastname, #last
+            var lastname = document.querySelector("#last").value;
+            // hours --> hoursworked, #hours
+            var hoursworked = document.querySelector("#hours").value;
+            // rate --> hourlyrate, #rate 
+            var hourlyrate = document.querySelector("#rate").value;
+
+            
+            
 
             //console.log() all four values
             
@@ -92,63 +102,68 @@
             console.log(hourlyrate)
 
             //add the first and last name values together and store into a new variable called 'full' holding the user's full name
-            var firstName = document.querySelector("#first");
-            var LastName = document.querySelector("#last");
-            var fullname = fullname();
+            
+            var full = firstname + lastname;
+            console.log(full)
 
-            //console.log() the full name value
-            console.log(fullname)
 
 
             //convert both hours and rate to Number() data types
 
+            hoursworked = Number(hoursworked)
+            hourlyrate = Number(hourlyrate)
+
             
 
+            
 
             //NOTE: DO NOT MOVE ON UNTIL YOU ARE ABLE TO DISPLAY THE CORRECT VALUES! This is a practice in testing as you build! 
 
             //create gross, taxAmount, net variables and store corresponding data to them
             //use a tax percentage of 20% (.2)
-            gross = document.querySelector
-            taxAmount = document.querySelector
+            var gross = (hourlyrate * hoursworked * 2)
+            var tax_a = (gross * .2)
+            var net = (gross - tax_a)
             
             
 
             //console.log() all three processed values, rounded to the second decimal place
-            console.log(.toFixed(2))
+            console.log(gross.toFixed(2))
+            console.log(tax_a.toFixed(2))
+            console.log(net.toFixed(2))
+            
 
 
             //create a new variable called 'finalMessage' that holds the literal string value of the following, each value on a new line (use <br>): full name, hours worked*, hourly rate*   *--> rounded to the second decimal place 
-            var finalMessage = `final message:
-                                 <br>
-                                 firstname:
-                                 <br>
-                                 <br>
-                                 Your Name is ${firstName.value} ${LastName.value}
-                                 <br>
-                                 Hours Worked ${hoursworked.value}
-                                 <br>
-                                 Hourly Rate ${catYears}`;
+            var finalMessage = `fullname: ${full}<br> hoursworked: ${hoursworked}<br>hourlyrate: ${hourlyrate}<br>`;
 
         
             //create a new var called 'info' and store the entire #info *HTML element* to it
 
-            var info = 
+            var info = document.querySelector("#info")
 
 
             //create a new var called 'num' and store the entire #check *HTML element* to it
+
+            var num = document.querySelector("#check")
             
 
             //edit the innerHTML of the #info element (now the 'info' js var) to hold the value of 'finalMessage'
 
+            info.innerHTML = finalMessage
+            num.innerHTML = `Gross pay: ${gross.toFixed(2)}<br> Tax Amount: ${tax_a.toFixed(2)} <br> NetPay: ${net.toFixed(2)}`
 
 
             //edit the innerHTML of the #check element (now the 'check' js var) to hold a literal string with the following values: gross pay, tax amount, net pay. All three values should be rounded to the second decimal place.  Use <br> to break onto a new line for each value
 
 
 
+
+
             //add a 'click' event listener to the #submit HTML element (HINT: this is the first step in the <script> )
             //when the #submit button is clicked, the submitNow function should run
+
+            document.querySelector("#submitButton").addEventListener("click", submitNow)
 
         
             function submitNow(e)
@@ -157,7 +172,7 @@
                 /*NOTE FOR TESTING:
                     *if written correctly, you will see an alert() with all info entered as well as processed!*/
 
-                alert(`${full}\nHOURS: ${hours}\nRATE: $${rate.toFixed(2)}\n\nGROSS PAY: $${gross.toFixed(2)}\nTAX AMOUNT: $${taxAmount.toFixed(2)}\nNET PAY: $${net.toFixed(2)}`)
+                alert(`${full}\nHOURS: ${hoursworked}\nRATE: $${hourlyrate.toFixed(2)}\n\nGROSS PAY: $${gross.toFixed(2)}\nTAX AMOUNT: $${tax_a.toFixed(2)}\nNET PAY: $${net.toFixed(2)}`)
             }
             
         }
